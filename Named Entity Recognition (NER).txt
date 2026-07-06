@@ -5,6 +5,8 @@ currency values—within unstructured text.
 
 By extracting these specific entities, NER transforms raw language into 
 structured, easily analyzable data.
+
+python -m spacy download en_core_web_sm
 '''
 
 import spacy
