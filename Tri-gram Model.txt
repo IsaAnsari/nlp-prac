@@ -1,0 +1,23 @@
+'''
+A trigram model in NLP is a statistical language model that predicts the 
+probability of a word based on the exact two words that precede it. 
+
+It captures local context by assuming that the chance of a word 
+appearing depends only on its two immediate predecessors.
+'''
+
+from nltk import ngrams
+from collections import defaultdict
+
+text = "I love NLP nad I love coding". split()
+
+tri_grams = list(ngrams(text, 3))
+
+model = defaultdict(int)
+
+for gram in tri_grams:
+    model[gram] += 1
+
+print("Tri-grams:",tri_grams)
+print("---------------------------------------------------------------------")
+print("Model:",dict(model))
