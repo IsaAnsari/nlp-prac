@@ -7,6 +7,8 @@ By extracting these specific entities, NER transforms raw language into
 structured, easily analyzable data.
 
 python -m spacy download en_core_web_sm
+OR
+py -[version] -m pip install spacy
 '''
 
 import spacy
