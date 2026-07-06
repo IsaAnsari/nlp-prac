@@ -7,6 +7,8 @@ It establishes direct, word-to-word relationships by linking words to their gove
 The output is a tree or directed graph detailing exactly which words modify others.
 
 python -m spacy download en_core_web_sm
+OR
+py -[version] -m pip install spacy
 
 '''
 
