@@ -1,0 +1,24 @@
+'''
+Named Entity Recognition (NER) is an NLP technique that automatically identifies 
+and classifies key elements—such as people, organizations, locations, dates, and 
+currency values—within unstructured text. 
+
+By extracting these specific entities, NER transforms raw language into 
+structured, easily analyzable data.
+'''
+
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+text = """Apple is looking at buying U.K. startup for $1 billion.
+Barack Obama was born on August 4, 1961."""
+
+doc = nlp(text)
+
+print("Named Entities, their labels, and explanations:")
+
+for ent in doc.ents:
+    print(f"{ent.text:20} {ent.label_:10} {spacy.explain(ent.label_)}")
+
+spacy.displacy.serve(doc, style="ent")
