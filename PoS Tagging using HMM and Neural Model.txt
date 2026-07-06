@@ -9,6 +9,8 @@ Neural models for Part-of-Speech (POS) tagging use deep learning architectures
 to automatically predict the grammatical label of words based on their surrounding context.
 
 python -m spacy download en_core_web_sm
+OR
+py -[version] -m pip install spacy
 
 '''
 
