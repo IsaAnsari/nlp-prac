@@ -1,0 +1,25 @@
+'''
+Dependency parsing is a Natural Language Processing (NLP) technique that analyzes 
+the grammatical structure of a sentence. 
+
+It establishes direct, word-to-word relationships by linking words to their governing “head”. 
+
+The output is a tree or directed graph detailing exactly which words modify others.
+
+python -m spacy download en_core_web_sm
+
+'''
+
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+sentence = "john saw the man in teh park."
+doc = nlp(sentence)
+
+for token in doc:
+    print(
+        f"{token.text:10} {token.dep_:10} {token.head.text:10} "
+        f"{token.head.pos_:10} {[child for child in token.children]}"
+    )
+
+spacy.displacy.serve(doc, style="dep")

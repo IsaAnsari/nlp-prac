@@ -1,0 +1,35 @@
+'''
+Syntactic parsing is the computational process of analyzing the grammatical 
+structure of a sentence. 
+
+By determining how words relate to one another, it helps machines understand 
+language structure, enabling applications like machine translation, information 
+extraction, and sentiment analysis.
+'''
+
+import nltk
+from nltk import CFG
+from nltk.parse.generate import generate
+
+grammar = CFG.fromstring("""
+ S -> NP VP
+ VP -> V NP | V NP PP
+ PP -> P NP
+ V -> "saw" | "ate" | "walked"
+ NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+ Det -> "a" | "an" | "the" | "my"
+ N -> "man" | "dog" | "cat" | "telescope" | "park"
+ P -> "in" | "on" | "by" | "with"
+""")
+
+parser = nltk.ChartParser(grammar)
+sentence = "John saw the man in the park".split()
+parses = list(parser.parse(sentence))
+
+for tree in parses:
+    print(tree)
+    tree.draw()
+
+print("Generated sentences:")
+for sentence in generate(grammar, n=10):
+    print(' '.join(sentence))

@@ -1,0 +1,24 @@
+'''
+Sentence segmentation and word tokenization are foundational preprocessing steps in NLP. 
+
+Sentence segmentation divides raw text into individual sentences, while word tokenization 
+breaks those sentences into distinct words or symbols.
+'''
+
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+nltk.download('punkt_tab')
+
+text = """Hello! This is a sample text. It demonstrates sentence
+segmentation and word tokenization.
+Let's see how it works."""
+
+sentences = sent_tokenize(text)
+print("Sentences:")
+for i, sentence in enumerate(sentences, 1):
+    print(f"{i}: {sentence}")
+
+print("\nWord Tokens:")
+for sentence in sentences:
+    words = word_tokenize(sentence)
+    print(words)

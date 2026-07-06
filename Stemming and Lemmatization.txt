@@ -1,0 +1,50 @@
+'''
+Stemming and lemmatization are text preprocessing techniques used in 
+NLP to reduce inflected words to their base form. 
+
+Stemming uses fast, rule-based trimming of prefixes/suffixes (often resulting in non-dictionary roots), 
+while lemmatization uses linguistic databases and grammar rules to produce valid dictionary words.
+'''
+
+import nltk
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+nltk.download('punkt_tab')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+def perform_stemming(words):
+    """
+    Perform stemming on the input words.
+    :param words: A list of words to be stemmed.
+    :return: A list of stemmed words.
+    """
+    stemmer = PorterStemmer()
+    stemmed_words = [stemmer.stem(word) for word in words]
+    return stemmed_words
+
+def perform_lemmatization(words):
+    """
+    Perform lemmatization on the input words.
+    :param words: A list of words to be lemmatized.
+    :return: A list of lemmatized words.
+    """
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+    return lemmatized_words
+
+if __name__ == "__main__":
+    text = "The striped bats are hangingon their feet for best"
+    words = word_tokenize(text)
+    
+    print("Original Words:")
+    print(words)
+    
+    stemmed_words = perform_stemming(words)
+    print("\nStemmed Words:")
+    print(stemmed_words)
+    
+    lemmatized_words = perform_lemmatization(words)
+    print("\nLemmatized Words:")
+    print(lemmatized_words)
