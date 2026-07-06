@@ -9,7 +9,7 @@ appearing depends only on its two immediate predecessors.
 from nltk import ngrams
 from collections import defaultdict
 
-text = "I love NLP nad I love coding". split()
+text = "I love NLP and I love coding". split()
 
 tri_grams = list(ngrams(text, 3))
 
