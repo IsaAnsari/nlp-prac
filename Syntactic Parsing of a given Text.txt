@@ -5,6 +5,10 @@ structure of a sentence.
 By determining how words relate to one another, it helps machines understand 
 language structure, enabling applications like machine translation, information 
 extraction, and sentiment analysis.
+
+Example word: Flies, Studies
+Stemming = Fli, Studi
+Lemmatization = Fly, Study
 '''
 
 import nltk
