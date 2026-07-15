@@ -6,7 +6,7 @@ Stemming uses fast, rule-based trimming of prefixes/suffixes (often resulting in
 while lemmatization uses linguistic databases and grammar rules to produce valid dictionary words.
 
 Example word: Flies, Studies
-Stemming = Fli, Studi
+Stemming    = Fli,   Studi
 Lemmatization = Fly, Study
 '''
 
